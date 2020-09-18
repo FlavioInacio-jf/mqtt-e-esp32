@@ -1,18 +1,17 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
-const byte LED = 2;
 
 /*Dados do WIFI*/
-const char* ssid = "Redmi 3S"; //SSID do Wifi
-const char* password =  "123456789"; //Senha do wifi
+const char* ssid = "rau"; //SSID do Wifi
+const char* password =  "11229217"; //Senha do wifi
 
 /*Dados do Broker */
-const int mqttPort = 14600;
-const char* mqttUser = "chvezqkg";
-const char* mqttPassword = "nQOogcrPLnRe";
-const char* mqttServer = "soldier.cloudmqtt.com";
+const int mqttPort = 1883;
+const char* mqttUser = "jflavioinacio22@gmail.com";
+const char* mqttPassword = "cb62d165";
+const char* mqttServer = "mqtt.dioty.co";
 
-const char* subscribe_topic_led = "estufa/led";
+const char* subscribe_topic_led = "/jflavioinacio22@gmail.com/led";
 
 byte estado_led = 0;
 
@@ -22,44 +21,44 @@ PubSubClient client(espClient);
 void Conexao_Wifi () {
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
+    delay(500);
+    Serial.println("Conectando ao WiFi...");
   }
-  if (WiFi.status() == WL_CONNECTED) {
-    lcd.print("Conect. na rede WiFi");
-    client.setServer(mqttServer, mqttPort);
-    client.setCallback(callback);
-    
-    while (!client.connected()) {
-      Serial.print("Conect. Broker");
-      if (client.connect("ESP32Client", mqttUser, mqttPassword )) {
-        Serial.print("Conectado");
-      }
-      else {
-        lcd.print("falha ");
-      }
-      delay(1000);
+
+  Serial.println("Conectado na rede WiFi");
+  client.setServer(mqttServer, mqttPort);
+  client.setCallback(callback);
+
+  while (!client.connected()) {
+    Serial.println("Conectando ao Broker");
+    if (client.connect("ESP32Client", mqttUser, mqttPassword )) {
+      Serial.println("Conectado");
     }
-    client.subscribe(subscribe_topic_led);
-  }
-  else {
-    Serial.print("Falha na conexação");
+    else {
+      Serial.println("falha");
+    }
     delay(1000);
   }
+  client.publish("/jflavioinacio22@gmail.com/", "Funcionando");
+  client.subscribe(subscribe_topic_led);
 }
+
 
 void callback(char* topic, byte* payload, unsigned int length) {//Função Callback
   
   payload[length] = '\0';
   String strMSG = String((char*)payload);
+  Serial.print("Recebido: ");
+  Serial.println(strMSG);
   String topico_string = String(topic);
-  
+
   estado_led = strMSG.toInt();
 }
 
 
 void reconect() { //função pra reconectar ao servido MQTT
   if (!client.connected()) {
-    Serial.print("Tentando conect. servidor MQTT");
+    Serial.println("Tentando conect. servidor MQTT");
     bool conectado = strlen(mqttUser) > 0 ?
                      client.connect("ESP32Client", mqttUser, mqttPassword) :
                      client.connect("ESP32Client");
@@ -68,25 +67,33 @@ void reconect() { //função pra reconectar ao servido MQTT
       client.subscribe(subscribe_topic_led, 1);
     }
     else {
-      lcd.print("Falha: ");
-      lcd.print( String(client.state()).c_str());
+      Serial.println("Falha: ");
+      Serial.println( String(client.state()).c_str());
       delay(1000);
     }
   }
 }
 
 void setup() {
+
   Serial.begin(9600);//Inicializando o monitor serial com a velocidade de 9600bits/s
-  pinMode(LED, OUTPUT);//Definindo o pino do led como saida(OUTPUT)
+  Conexao_Wifi();
+  pinMode(LED_BUILTIN, OUTPUT);//Definindo o pino do led como saida(OUTPUT)
+
 }
 
 void loop() {
 
-  if(estado_led == 1){
-    digitalWrite(LED, !digitalRead(LED));  
+  switch (estado_led) {
+    case 0:
+      digitalWrite(LED_BUILTIN, 0);
+      break;
+
+    case 1:
+      digitalWrite(LED_BUILTIN, 1);
+      break;
   }
-  estado_led = 0
-  
+
   if (!client.connected()) {
     reconect();
   }
