@@ -66,11 +66,12 @@ Além disto é bom ter um editor para trabalhar com o código como [Arduino IDE]
 #### 🧭 Executando o projeto
 
 
-1. Clone este repositório
-$ git clone git@github.com:FlavioInacio-jf/README-mqtt-e-esp32.git
+1. Clone este repositório </br>
+`$ git clone git@github.com:FlavioInacio-jf/README-mqtt-e-esp32.git`
 
-2. Acesse a pasta do projeto no seu terminal/cmd
-$ cd README-mqtt-e-esp32
+2. Acesse a pasta do projeto no seu terminal/cmd </br>
+`$ cd README-mqtt-e-esp32`
+
 
 3. Vá para a pasta do projeto e abra do arquivo code_esp32 utilizando o Arduino IDE
 
@@ -78,15 +79,25 @@ $ cd README-mqtt-e-esp32
 
 5. Crie seu próprio Broker Cloud utlizando o site [DIoTY](http://www.dioty.co/)
 
-6. Altere os seguintes trechos no código
+6. Altere os seguintes trechos no código com as informações fornecidas pelo [DIoTY](http://www.dioty.co/) </br>
+~~~
+Dados do Wifi
+const char* ssid = "<informar o ssid do wifi>";
+const char* password =  "<senha do wifi>";
+
+/*Dados do Broker */
+const int mqttPort = <Broker port>;
+const char* mqttUser = "<User id>";
+const char* mqttPassword = "<Password>";
+const char* mqttServer = "Broker host";
+
+const char* subscribe_topic_led = "<Your root topic>/led";
+~~~
   
-5 - Conecte o Esp32 ao computador e compile o código
+7. Conecte o Esp32 ao computador e compile o código
 
-   A aplicação será aberta na porta:3000 - acesse http://localhost:3000
+8. Verifique na serial do Arduino IDE se toda a conexão foi realizada corretamente
 
-
-
----
 
 ## 🛠 Tecnologias
 
