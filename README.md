@@ -85,7 +85,7 @@ Dados do Wifi
 const char* ssid = "<informar o ssid do wifi>";
 const char* password =  "<senha do wifi>";
 
-/*Dados do Broker */
+Dados do Broker
 const int mqttPort = <Broker port>;
 const char* mqttUser = "<User id>";
 const char* mqttPassword = "<Password>";
