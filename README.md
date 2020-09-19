@@ -35,20 +35,16 @@
 
 ## 💻 Sobre o projeto
 
-Sistema de liga e desliga usando o Esp32 e o Mqtt.
-Video do projeto funcionando no Youtube </br></br>
-  [![Video do projeto](https://img.youtube.com/vi/nQ8GWy7Zifo/0.jpg)](https://www.youtube.com/watch?v=nQ8GWy7Zifo)
+Utilizando o Esp32 em conjunto com o protocolo de comunicação MQTT a fim de fazer um sistema de liga e desliga.
+[Video do projeto](https://www.youtube.com/watch?v=nQ8GWy7Zifo) funcionando no Youtube </br></br>
+  
 
 
 ---
 
 ## ⚙️ Funcionalidades
 
-- [x] Empresas ou entidades podem se cadastrar na plataforma web enviando:
- 
-- [x] Os usuários tem acesso ao aplicativo móvel, onde podem:
-  - [x] navegar pelo mapa para ver as instituições cadastradas
-  - [x] entrar em contato com a entidade através do E-mail ou do WhatsApp
+- [x] Controle do estado do led através do Mqtt:
 
 ---
 
@@ -56,7 +52,7 @@ Video do projeto funcionando no Youtube </br></br>
 
 Este projeto é divido em três partes:
 1. Esp32(Client)
-2. Mqtt Explorer(Server)
+2. Mqtt Explorer
 
 💡O Esp32 utilizado: DOIT ESP32 DEVKIT V1
 
