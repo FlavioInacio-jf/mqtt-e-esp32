@@ -2,16 +2,16 @@
 #include <PubSubClient.h>
 
 /*Dados do WIFI*/
-const char* ssid = "rau"; //SSID do Wifi
-const char* password =  "11229217"; //Senha do wifi
+const char* ssid = ""; //SSID do Wifi
+const char* password =  ""; //Senha do wifi
 
 /*Dados do Broker */
-const int mqttPort = 1883;
-const char* mqttUser = "jflavioinacio22@gmail.com";
-const char* mqttPassword = "cb62d165";
-const char* mqttServer = "mqtt.dioty.co";
+const int mqttPort = <>;
+const char* mqttUser = "<>";
+const char* mqttPassword = "<>";
+const char* mqttServer = "<>";
 
-const char* subscribe_topic_led = "/jflavioinacio22@gmail.com/led";
+const char* subscribe_topic_led = "<>/led";
 
 byte estado_led = 0;
 
@@ -39,7 +39,7 @@ void Conexao_Wifi () {
     }
     delay(1000);
   }
-  client.publish("/jflavioinacio22@gmail.com/", "Funcionando");
+  client.publish("<>/", "Funcionando");
   client.subscribe(subscribe_topic_led);
 }
 
