@@ -94,10 +94,15 @@ const char* mqttServer = "Broker host";
 const char* subscribe_topic_led = "<Your root topic>/led";
 ~~~
   
-7. Conecte o Esp32 ao computador e compile o código
+7. Conecte o Esp32 ao computador e compile o código. 
 
-8. Verifique na serial do Arduino IDE se toda a conexão foi realizada corretamente
+8. Verifique na serial do Arduino IDE se toda a conexão foi realizada corretamente. A seguinte mensagem deve aparecer:
+>⸮4⸮⸮⸮⸮⸮Conectando ao WiFi... </br>
+Conectado na rede WiFi </br>
+Conectando ao Broker </br>
+Conectado </br>
 
+9. Abra o MQTT Explorer e preencha os campos disponiveis  com as informações fornecidas pelo [DIoTY](http://www.dioty.co/).
 
 ## 🛠 Tecnologias
 
