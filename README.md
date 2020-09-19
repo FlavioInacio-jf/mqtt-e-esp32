@@ -63,28 +63,28 @@ Antes de começar, você vai precisar ter instalado em sua máquina a seguinte f
 Além disto é bom ter um editor para trabalhar com o código como [Arduino IDE](https://www.arduino.cc/en/main/software)
 
 
-#### 🧭 Rodando a aplicação web
+#### 🧭 Executando o projeto
 
-```bash
 
-# Clone este repositório
+1. Clone este repositório
 $ git clone git@github.com:FlavioInacio-jf/README-mqtt-e-esp32.git
 
-# Acesse a pasta do projeto no seu terminal/cmd
+2. Acesse a pasta do projeto no seu terminal/cmd
 $ cd README-mqtt-e-esp32
 
-# Vá para a pasta da aplicação Front End
-$ cd web
+3. Vá para a pasta do projeto e abra do arquivo code_esp32 utilizando o Arduino IDE
 
-# Instale as dependências
-$ npm install
+4. Siga os passos do [site](https://blog.eletrogate.com/conhecendo-o-esp32-usando-arduino-ide-2/#:~:text=Clique%20em%20Ferramentas%20%2F%20Placas%20%2F%20Gerenciador,para%20o%20pacote%20ficar%20ativo.) e instale a bliblioteca do esp32 
 
-# Execute a aplicação em modo de desenvolvimento
-$ npm run start
+5. Crie seu próprio Broker Cloud utlizando o site [DIoTY](http://www.dioty.co/)
 
-# A aplicação será aberta na porta:3000 - acesse http://localhost:3000
+6. Altere os seguintes trechos no código
+  
+5 - Conecte o Esp32 ao computador e compile o código
 
-```
+   A aplicação será aberta na porta:3000 - acesse http://localhost:3000
+
+
 
 ---
 
@@ -93,7 +93,7 @@ $ npm run start
 As seguintes ferramentas foram usadas na construção do projeto:
 
 
-#### **ESP32**  ([C++](https://nodejs.org/en/))
+#### **ESP32**  ([Arduino](https://www.arduino.cc/reference/pt/))
 
 -  
 
