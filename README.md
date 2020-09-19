@@ -107,6 +107,9 @@ Conectado </br>
 10. No lado direito do MQTT Explorer, na secção 'Publish', informe o topico. Por fim, selecione o radio 'json', informe o valor(0 ou 1) na caixa e clique em 'Publish'. 
 
 11. Se tudo ocorreu certo o led ira acender/apagar. 
+<h1 align="center">
+    <img alt="Led" title="#Banner Rest" src="temp/led.gif" />
+</h1>
 
 ## 🛠 Tecnologias
 
