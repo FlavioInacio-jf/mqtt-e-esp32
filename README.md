@@ -16,7 +16,7 @@
   
 </p>
 <h1 align="center">
-    <img alt="Restbanner" title="#Banner Rest" src="screenshot.png" />
+    <img alt="Diagrama MQTT" title="#Banner Rest" src="temp/Diagrama-banner.png" />
 </h1>
 
 <h4 align="center"> 
