@@ -104,7 +104,7 @@ Conectado </br>
 
 9. Abra o MQTT Explorer e preencha os campos disponiveis  com as informações fornecidas pelo [DIoTY](http://www.dioty.co/).
 
-10. No lado direito do MQTT Explorer, na secção 'Publish', informe o topico. Por fim, selecione o radio 'json', informe o valor(0 ou 1) na caixa e clique em "Publish'. 
+10. No lado direito do MQTT Explorer, na secção 'Publish', informe o topico. Por fim, selecione o radio 'json', informe o valor(0 ou 1) na caixa e clique em 'Publish'. 
 
 11. Se tudo ocorreu certo o led ira acender/apagar. 
 
