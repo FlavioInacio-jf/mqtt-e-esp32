@@ -50,8 +50,8 @@ Utilizando o Esp32 em conjunto com o protocolo de comunicação MQTT a fim de fa
 
 ## 🚀 Como executar o projeto
 
-Este projeto é divido em três partes:
-1. Esp32(Client)
+Este projeto é divido em duas partes:
+1. Esp32
 2. Mqtt Explorer
 
 💡O Esp32 utilizado: DOIT ESP32 DEVKIT V1
@@ -103,6 +103,10 @@ Conectando ao Broker </br>
 Conectado </br>
 
 9. Abra o MQTT Explorer e preencha os campos disponiveis  com as informações fornecidas pelo [DIoTY](http://www.dioty.co/).
+
+10. No lado direito do MQTT Explorer, na secção 'Publish', informe o topico. Por fim, selecione o radio 'json', informe o valor(0 ou 1) na caixa e clique em "Publish'. 
+
+11. Se tudo ocorreu certo o led ira acender/apagar. 
 
 ## 🛠 Tecnologias
 
