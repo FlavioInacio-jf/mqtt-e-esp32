@@ -36,13 +36,9 @@
 ## 💻 Sobre o projeto
 
 Sistema de liga e desliga usando o Esp32 e o Mqtt.
-
----
-
-## 💻 Sobre o projeto
-
 Video do projeto funcionando no Youtube </br></br>
   [![Video do projeto](https://img.youtube.com/vi/nQ8GWy7Zifo/0.jpg)](https://www.youtube.com/watch?v=nQ8GWy7Zifo)
+
 
 ---
 
